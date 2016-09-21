@@ -292,8 +292,8 @@ Tank.prototype = {
 					break;
 			}
 		}).mousemove( function(e){ //Detect mouse for aiming
-			var mx = e.pageX - t.$arena.offset().left; //rubentd had set these to event.pageX and were not working
-			var my = e.pageY - t.$arena.offset().top;
+			var mx = e.pageX - t.$arena.offset().left; //rubentd had set these to 'event.pageX' and were not working
+			var my = e.pageY - t.$arena.offset().top; //replaced with 'e.pageX'
 			t.setCannonAngle(mx, my);
 		}).click( function(){
 			t.shoot();
