@@ -1,6 +1,6 @@
 var DEBUG = true;
 var INTERVAL = 50;
-var ROTATION_SPEED = 5;
+var ROTATION_SPEED = 10;
 var ARENA_MARGIN = 30;
 
 function Game(arenaId, w, h, socket){
@@ -292,8 +292,8 @@ Tank.prototype = {
 					break;
 			}
 		}).mousemove( function(e){ //Detect mouse for aiming
-			var mx = event.pageX - t.$arena.offset().left;
-			var my = event.pageY - t.$arena.offset().top;
+			var mx = e.pageX - t.$arena.offset().left; //rubentd had set these to event.pageX and were not working
+			var my = e.pageY - t.$arena.offset().top;
 			t.setCannonAngle(mx, my);
 		}).click( function(){
 			t.shoot();
