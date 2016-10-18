@@ -1,12 +1,9 @@
-var express = require('express'),
-	app = express(),
-	server = require('http').createServer(app),
-	io = require('socket.io').listen(server),
+var express = require('express');
+var app = express();
 
-server.listen(process.env.PORT || 8082);
 
-io.set("transports", ["xhr-polling"]);
-io.set("polling duration", 10);
+
+
 
 var counter = 0;
 var BALL_SPEED = 10;
@@ -17,8 +14,15 @@ var TANK_INIT_HP = 100;
 //Static resources server
 app.use(express.static(__dirname + '/www'));
 
+var port = process.env.PORT || 8082;
 
+var server = app.listen(port, function () {
+	console.log('Server running at port %s', port);
+});
+var io = require('socket.io')(server);
 
+io.set("transports", ["xhr-polling"]);
+io.set("polling duration", 10);
 
 function GameServer(){
 	this.tanks = [];
