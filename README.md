@@ -1,7 +1,9 @@
 tanks
 ======
 
-Multiplayer tank game developed in nodejs.
+Multiplayer tank game originally developed with nodejs by rubentd.
 
-You can play it [here](http://45.55.165.9:8082)
-(Sometimes it's online) 
+Modified to be deployed on Heroku by me.
+
+You can play it [here](https://multiplay.herokuapp.com/)
+ 
