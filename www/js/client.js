@@ -7,6 +7,19 @@ var game = new Game('#arena', WIDTH, HEIGHT, socket);
 var selectedTank = 1;
 var tankName = '';
 
+//Heroku codeplay
+
+function sendSocketRequest() {
+  socket.emit('myaction', $("#some_field").val());
+}
+
+socket.on('result', function(data) {
+  console.log(data);
+}
+
+
+//----
+
 socket.on('addTank', function(tank){
 	game.addTank(tank.id, tank.type, tank.isLocal, tank.x, tank.y);
 });
