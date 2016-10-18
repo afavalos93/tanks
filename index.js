@@ -1,5 +1,11 @@
-var express = require('express');
-var app = express();
+var express = require('express'),
+	app = express(),
+	server = require('http').createServer(app),
+	io = require('socket.io').listen(server),
+
+server.listen(process.env.PORT || 8082);
+
+	 
 var counter = 0;
 var BALL_SPEED = 10;
 var WIDTH = 1100;
@@ -9,12 +15,9 @@ var TANK_INIT_HP = 100;
 //Static resources server
 app.use(express.static(__dirname + '/www'));
 var port = process.env.PORT || 8082;
-var server = app.listen(port, function () {
-	var port = server.address().port;
-	console.log('Server running at port %s', port);
-});
 
-var io = require('socket.io')(server);
+
+
 
 io.configure(function () {  
   io.set("transports", ["xhr-polling"]); 
