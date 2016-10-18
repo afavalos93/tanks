@@ -1,10 +1,6 @@
 var express = require('express');
 var app = express();
 
-
-
-
-
 var counter = 0;
 var BALL_SPEED = 10;
 var WIDTH = 1100;
