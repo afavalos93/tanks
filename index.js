@@ -4,8 +4,10 @@ var express = require('express'),
 	io = require('socket.io').listen(server),
 
 server.listen(process.env.PORT || 8082);
-
-	 
+io.configure () {
+  io.set("transports", ["xhr-polling"]);
+  io.set("polling duration", 10);
+}
 var counter = 0;
 var BALL_SPEED = 10;
 var WIDTH = 1100;
