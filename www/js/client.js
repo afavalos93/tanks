@@ -13,10 +13,6 @@ function sendSocketRequest() {
   socket.emit('myaction', $("#some_field").val());
 }
 
-socket.on('result', function(data) {
-  console.log(data);
-}
-
 
 //----
 
