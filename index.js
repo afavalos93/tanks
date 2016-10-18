@@ -14,15 +14,8 @@ var TANK_INIT_HP = 100;
 
 //Static resources server
 app.use(express.static(__dirname + '/www'));
-var port = process.env.PORT || 8082;
 
 
-
-
-io.configure(function () {  
-  io.set("transports", ["xhr-polling"]); 
-  io.set("polling duration", 10); 
-});
 
 
 function GameServer(){
