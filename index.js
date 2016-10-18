@@ -17,8 +17,6 @@ var server = app.listen(port, function () {
 });
 var io = require('socket.io')(server);
 
-io.set("transports", ["xhr-polling"]);
-io.set("polling duration", 10);
 
 function GameServer(){
 	this.tanks = [];
