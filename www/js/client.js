@@ -1,7 +1,8 @@
 var WIDTH = 1100;
 var HEIGHT = 580;
-var socket = io.connect('http://127.0.0.1:8082');
+var socket = io.connect('https://multiplay.herokuapp.com/');
 //'http://45.55.165.9:8082'
+//'http://127.0.0.1:8082'
 var game = new Game('#arena', WIDTH, HEIGHT, socket);
 var selectedTank = 1;
 var tankName = '';
